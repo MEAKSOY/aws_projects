@@ -35,7 +35,7 @@ resource "aws_s3_bucket_public_access_block" "website_bucket" {
 
 resource "aws_s3_bucket_policy" "website_bucket" {
   bucket = aws_s3_bucket.website_bucket.id
-  policy = jsondecode({
+  policy = jsonencode({
     Version = "2023-06-13"
     Statement = [
       {
