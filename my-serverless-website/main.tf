@@ -19,3 +19,9 @@ resource "aws_s3_object" "website_bucket" {
   source = "index.html"
   content_type = "text/html"
 }
+
+resource "aws_s3_account_public_access_block" "website_bucket" {
+  block_public_acls = false
+  block_public_policy = false
+}
+
